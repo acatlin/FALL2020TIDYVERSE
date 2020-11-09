@@ -1,6 +1,6 @@
 ---
-title: "Tidyverse with Groceries Data"
-author: "DH Kim"
+title: "Tidyverse EXTEND with Groceries Data_Atina Karim"
+author: "Atina Karim"
 output:
   rmarkdown::html_vignette:
 vignette: >
@@ -25,7 +25,7 @@ It shows how to use the `read_csv()` function in the readr library and its, whic
 ```{r code-chunk-label}
 groceries <- 
   read_csv(url("https://raw.githubusercontent.com/HwanKim2/data_repo/main/Groceries_dataset.csv"))
-glimpse(groceries)
+groceries
 ```
 
 The resulting data frame is *groceries*. Some variants are as follows. The first one explicitly writes down the default options in the function.
@@ -77,9 +77,44 @@ labs(x = "", y = "quantity sold") +
 theme(axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=1))
 ```
 
-&nbsp;
+# Tidyverse EXTEND Assignment - Atina Karim
 
-&nbsp;
+For my Tidyverse EXTEND assignment, I will be working on DH Kim's Groceries Data. I am interested in analyzing the data on the member/shopper level.
 
-&nbsp;
+## How many unique shoppers/members are in our dataset?
+```{r}
+ n_distinct(groceries$Member_number,na.rm=FALSE)
+```
 
+## Dropping unnecessary columns
+```{r}
+data <- subset(groceries,select = -c(Date))
+```
+## Members who bought the most items 
+```{r}
+Members <-  data %>%
+  group_by(Member_number) %>%
+  summarize(n=n()) %>%
+  arrange(desc(n))
+Members
+```
+Looks like members 3180,2051 and 3050 are our biggest shoppers. For further analysis I would like to see what the most bought items are for these members.
+
+## Top 3 items for 3180,2051 and 3050
+
+```{r}
+Members2 <- subset(data,Member_number==3180|Member_number==2051|Member_number==3050)
+Members2
+```
+```{r}
+Items <-  Members2 %>%
+  group_by(itemDescription) %>%
+  summarize(n=n()) %>%
+    arrange(desc(n))
+Items123 <-Items[1:3,]
+ggplot(Items123,aes(x=itemDescription,y=n,fill=itemDescription))+geom_col()+geom_text(label=(Items123$n))+ggtitle("Top 3 Items for Members 3180,2051 and 3050")
+```
+It looks like the overall trend (illustrated above by DH Kim) holds for our member subset.
+
+
+```
