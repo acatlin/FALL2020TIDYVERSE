@@ -84,6 +84,7 @@ I decided to pick a data set regarding the senate race fundamentals. Using dplyr
 CUNY DATA 607 TIDYVERSE Collaborative project
 
 BDavidoff Tidyverse CREATE - packages: [ggplot2, dpylr] data source: [COVID and presidental approval ratings (https://raw.githubusercontent.com/fivethirtyeight/covid-19-polls/master/covid_approval_polls.csv)]
+	Also Extended the work of Karim Hammoud by adding dpylr function for grouping
 =======
 Using ggExtra for Exploratory Plotting by Rachel Greenlee
 -adding boxplots and histograms to axis of a standard scatterplot
