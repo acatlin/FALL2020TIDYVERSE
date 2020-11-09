@@ -78,6 +78,19 @@ per_year %>%
  ggplot(aes(Year, Total)) + geom_point()
 ```
 
+
+###Added by Brett Davidoff
+#Count the number of times each publisher appears using dplyr
+```{r}
+library("dplyr")
+
+video_games %>% count(Publisher, sort=TRUE)
+
+```
+
+
+
+
 Any additional analysis is welcome.
 Thanks,
 Karim Hammoud
