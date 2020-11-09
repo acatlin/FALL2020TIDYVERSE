@@ -1,3 +1,4 @@
+
 # Karim Hommod
 My analysis includs analysing the sales of video games all around the world, I used more than one Tidyverse packges, and collected the data from Kaggle. 
 =======
@@ -593,6 +594,8 @@ Analysis of Diamond clarity and depth correlation/frequency as well as ratio [pe
 =======
 
 * Data Analysis of Grocery items sold using Groceries_dataset.csv
+
+#Atina Karim extended DH Kim's CREATE Assignment on Groceries Data to illustrate additional dplyr and ggplot functions.
 =======
 Change Log:
 26 October: Added vignette w/ examples for purrr and forcats, Cameron Smith
