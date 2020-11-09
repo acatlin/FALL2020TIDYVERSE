@@ -515,6 +515,7 @@ M_Skonberg Tidyverse CREATE - function(ggplot2), data(Happiness & Alcohol)
 Stefano Biguzzi - vignette on the dplyr library group_by(), tally(), and summarise() functions.
 =======
 BDavidoff Tidyverse CREATE - packages: [ggplot2, dpylr] data source: [COVID and presidental approval ratings (https://raw.githubusercontent.com/fivethirtyeight/covid-19-polls/master/covid_approval_polls.csv)]
+	Also Extended the work of Karim Hammoud by adding dpylr function for grouping
 =======
 Using ggExtra for Exploratory Plotting by Rachel Greenlee
 -adding boxplots and histograms to axis of a standard scatterplot
